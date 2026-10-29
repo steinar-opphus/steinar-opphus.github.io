@@ -5,5 +5,6 @@
   {"title":"The Road","coverLines":["The","Road"],"author":"Cormac McCarthy","slug":"the-road-reader","bookCount":1,"added":"2026-10-26","order":4,"color":"#aaa69b","ink":"#363932","symbol":"∥","height":250},
   {"title":"Butcher’s Crossing","coverLines":["Butcher’s","Crossing"],"author":"John Williams","slug":"butchers-crossing-reader","bookCount":1,"added":"2026-10-27","order":5,"color":"#7b654c","ink":"#fff2dd","symbol":"△","height":266},
   {"title":"Ordinary Grace","coverLines":["Ordinary","Grace"],"author":"William Kent Krueger","slug":"ordinary-grace-reader","bookCount":1,"added":"2026-10-27","order":6,"color":"#667a78","ink":"#fff8e8","symbol":"≈","height":258},
-  {"title":"All the Colors of the Dark","coverLines":["All the Colors","of the Dark"],"author":"Chris Whitaker","slug":"all-the-colors-of-the-dark-reader","bookCount":1,"added":"2026-10-27","order":7,"color":"#494359","ink":"#f2e8d9","symbol":"◐","height":280}
+  {"title":"All the Colors of the Dark","coverLines":["All the Colors","of the Dark"],"author":"Chris Whitaker","slug":"all-the-colors-of-the-dark-reader","bookCount":1,"added":"2026-10-27","order":7,"color":"#494359","ink":"#f2e8d9","symbol":"◐","height":280},
+  {"title":"The Lord of the Rings","coverLines":["The Lord","of the Rings"],"author":"J. R. R. Tolkien","slug":"lotr-reader","bookCount":3,"added":"2026-10-29","order":8,"color":"#344b3e","ink":"#eee0b6","symbol":"◯","height":285}
 ]
