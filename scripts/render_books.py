@@ -15,6 +15,7 @@ def render():
     assert len({b['slug'] for b in books}) == len(books), 'Duplicate reader'
     for b in books:
         assert isinstance(b['bookCount'], int) and b['bookCount'] > 0
+        assert b.get('spineSize', 'thin') in ('thin', 'medium', 'thick')
         assert re.fullmatch(r'[a-z0-9-]+', b['slug'])
         assert all(re.fullmatch(r'#[0-9a-fA-F]{6}', b[k]) for k in ('color', 'ink'))
         date.fromisoformat(b['added'])
@@ -40,7 +41,7 @@ def render():
     for b in books:
         n = b['bookCount']
         count = f"{n} {'bok' if n == 1 else 'bøker'}"
-        spines.append(f'''<a class="book-spine {thickness(n)}" style="{colors(b)}" href="{url(b)}" data-title="{e(b['title'],quote=True)}" data-author="{e(b['author'],quote=True)}" data-count="{n}" aria-label="{e(b['title'],quote=True)} av {e(b['author'],quote=True)}, {count}"><span class="spine-type"><span class="spine-title">{e(b['title'])}</span><span class="spine-author">{e(b['author'])}</span></span><span class="spine-symbol" aria-hidden="true">{e(b['symbol'])}</span></a>''')
+        spines.append(f'''<a class="book-spine {b.get('spineSize', thickness(n))}" style="{colors(b)}" href="{url(b)}" data-title="{e(b['title'],quote=True)}" data-author="{e(b['author'],quote=True)}" data-count="{n}" aria-label="{e(b['title'],quote=True)} av {e(b['author'],quote=True)}, {count}"><span class="spine-type"><span class="spine-title">{e(b['title'])}</span><span class="spine-author">{e(b['author'])}</span></span><span class="spine-symbol" aria-hidden="true">{e(b['symbol'])}</span></a>''')
     page = f'''<!doctype html>
 <html lang="nb"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bokhyllen — Steinar Opphus</title><meta name="description" content="Hele samlingen av bokwikier: utforsk bøker og serier med leseposisjonen din som spoilergrense."><meta name="theme-color" content="#f5f3eb"><link rel="stylesheet" href="site.css"><link rel="stylesheet" href="bookshelf.css"><script src="bookshelf.js" defer></script></head>
 <body><a class="skip" href="#innhold">Hopp til innhold</a><div class="wrap"><header><a class="brand" href="index.html"><span class="mark" aria-hidden="true">so</span>Steinar Opphus</a><nav aria-label="Hovedmeny"><a href="index.html#prosjekter">Prosjekter</a><a href="bokhylle.html" aria-current="page">Bokhyllen</a><a href="https://github.com/steinar-opphus">GitHub ↗</a></nav></header>
@@ -48,7 +49,7 @@ def render():
 <div class="shelf-heading"><p>{len(books)} wikier <span aria-hidden="true">·</span> Nyeste først</p><p class="thickness-key">Smal: 1 bok <span aria-hidden="true">·</span> Middels: 2–3 <span aria-hidden="true">·</span> Bred: 4+</p></div>
 <div class="wood-library" id="wood-library" aria-label="Alle bokwikier"><div class="wood-row">{''.join(spines)}</div></div>
 <section class="book-selection" id="book-selection" aria-label="Valgt bok" hidden><div aria-live="polite"><p class="eyebrow" id="selected-count"></p><h2 id="selected-title"></h2><p id="selected-author"></p></div><a class="button" id="selected-reader" href="{url(books[0])}">Åpne reader <span aria-hidden="true">↗</span></a></section>
-<p class="book-note">Tykkelsen viser antall bøker wikien omfatter. Bokryggene er egen typografisk utforming, ikke originale bokomslag.</p><p class="shelf-about"><a href="bookwiki.html">Hvordan fungerer Bookwiki? →</a></p></main><footer><span>Steinar Opphus · Et verksted i stadig utvikling.</span><a href="index.html">Til forsiden ↑</a></footer></div></body></html>'''
+<p class="book-note">Tykkelsen viser nåværende eller planlagt omfang av wikien. Bokryggene er egen typografisk utforming, ikke originale bokomslag.</p><p class="shelf-about"><a href="bookwiki.html">Hvordan fungerer Bookwiki? →</a></p></main><footer><span>Steinar Opphus · Et verksted i stadig utvikling.</span><a href="index.html">Til forsiden ↑</a></footer></div></body></html>'''
     (ROOT / 'bokhylle.html').write_text(page)
 
 if __name__ == '__main__':
