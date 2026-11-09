@@ -9,5 +9,7 @@
   {"title":"The Lord of the Rings","coverLines":["The Lord","of the Rings"],"author":"J. R. R. Tolkien","slug":"lotr-reader","bookCount":3,"added":"2026-10-29","order":8,"color":"#344b3e","ink":"#eee0b6","symbol":"◯","height":285},
   {"title":"Empire of the Vampire","coverLines":["Empire","of the Vampire"],"author":"Jay Kristoff","slug":"empire-of-the-vampire-reader","bookCount":3,"added":"2026-10-31","order":9,"color":"#582f3b","ink":"#f1dfc4","symbol":"☾","height":278},
   {"title":"A Song of Ice and Fire","coverLines":["A Song of","Ice and Fire"],"author":"George R. R. Martin","slug":"a-song-of-ice-and-fire-reader","bookCount":1,"added":"2026-10-31","order":10,"color":"#354c60","ink":"#f2e5cf","symbol":"❄","height":290,"spineSize":"thick"},
-  {"title":"First Law World","coverLines":["First Law","World"],"author":"Joe Abercrombie","slug":"first-law-world-reader","bookCount":1,"spineSize":"thick","added":"2026-10-31","order":11,"color":"#704735","ink":"#f3e3c7","symbol":"⚔","height":290}
+  {"title":"First Law World","coverLines":["First Law","World"],"author":"Joe Abercrombie","slug":"first-law-world-reader","bookCount":1,"spineSize":"thick","added":"2026-10-31","order":11,"color":"#704735","ink":"#f3e3c7","symbol":"⚔","height":290},
+  {"title":"The Completionist Chronicles","coverLines":["The","Completionist","Chronicles"],"author":"Dakota Krout","slug":"completionist-chronicles","bookCount":4,"spineSize":"thick","added":"2026-11-09","order":12,"color":"#4e4169","ink":"#f0dfae","symbol":"✧","height":310}
 ]
+
